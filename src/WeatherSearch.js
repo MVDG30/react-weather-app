@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Forecast from "./Forecast";
 
 export default function WeatherSearch() {
   let [message, setMessage] = useState(false);
@@ -9,7 +10,7 @@ export default function WeatherSearch() {
     let icon = `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
 
     setMessage(
-      <ul>
+      <ul className="weatherList">
         <li>
           The current temperature in {city} is{" "}
           {Math.round(response.data.main.temp)}˚C
@@ -18,6 +19,7 @@ export default function WeatherSearch() {
         <li>Wind speed of {Math.round(response.data.wind.speed)}km/h </li>
         <li>{response.data.weather[0].description}</li>
         <img src={icon} alt="weatherDescription" />
+        <Forecast />
       </ul>
     );
   }
