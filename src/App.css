@@ -6,6 +6,13 @@ li {
   list-style: none;
 }
 
+form {
+  margin-left: 40px;
+}
+small {
+  margin-left: 40px;
+}
+
 .App {
   text-align: left;
 }
